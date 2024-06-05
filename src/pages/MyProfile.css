@@ -1,0 +1,134 @@
+.myprofile-detail{
+    position: relative;
+    width: 118rem;
+    height: 78rem;
+    overflow: hidden;    
+    max-width: 100%;
+    max-height: 100%;
+    text-align: left;
+    left: 2%;
+    font-size: 20px;
+    color: #1754AE;
+    font-family: var(--font-poppins);
+    top: 10rem;
+}
+.profile-header {
+    margin-top: 2rem; /* Add some margin to the top to push it down a bit */
+    font-size: 35px; /* Adjust font size if needed */
+    color: #fc6a00;
+}
+.user-detail {
+    font-size: 18px;
+}
+
+
+.Charger-detail {
+    width: 100%;
+    overflow-x: auto; /* Use horizontal scrolling if table is wider than container */
+}
+
+.Charger-detail table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.Charger-detail th, .Charger-detail td {
+    border: 1px solid #ddd;
+    padding: 8px 12px;
+    text-align: left;
+}
+
+.Charger-detail tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.Charger-detail tr:hover {
+    background-color: #ddd;
+}
+
+.Charger-detail th {
+    background-color: #098248;
+    color: white;
+}
+
+.myProfileModal {
+    position: relative;
+    background-color: var(--color-white);
+    width: 100%;
+    height: 95rem;
+    overflow-y: auto;
+    text-align: center;
+    font-size: var(--font-size-31xl);
+    color: var(--color-darkslateblue);
+    font-family: var(--font-poppins);
+    
+}
+
+.edit-profile-button, .delete-profile-button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.edit-profile-button {
+    background-color: #4CAF50; /* Green background for edit */
+    color: white;
+}
+
+.delete-profile-button {
+    background-color: #f44336; /* Red background for delete */
+    color: white;
+    margin-left: 10px;
+}
+
+/* General button styling within Charger-detail */
+.Charger-detail button {
+    padding: 6px 12px;
+    margin-right: 5px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s;
+}
+
+/* Specific styles for Edit button */
+.Charger-detail .edit-button {
+    background-color: #4CAF50; /* Green background */
+    color: white;
+}
+
+.Charger-detail .edit-button:hover {
+    background-color: #46a049; /* Slightly darker green on hover */
+}
+
+/* Specific styles for Delete button */
+.Charger-detail .delete-button {
+    background-color: #f44336; /* Red background */
+    color: white;
+}
+
+.Charger-detail .delete-button:hover {
+    background-color: #d73833; /* Slightly darker red on hover */
+}
+
+/* Style for Add Charger Button */
+.add-charger-button {
+    margin-top: 10px;
+    margin-bottom: 20px;
+    padding: 10px 20px;
+    background-color: #007bff; /* Bootstrap primary color */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.add-charger-button:hover {
+    background-color: #0056b3; /* Darker shade for hover effect */
+}

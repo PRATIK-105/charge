@@ -1,0 +1,132 @@
+/* .nav-bar-child {
+    position: absolute;
+    top: 0.19rem;
+    left: 0.06rem;
+    background-color: var(--color-white);
+    width: 120rem;
+    height: 6.31rem;
+  }
+  .chargeeazy-transparent-2-icon {
+    position: absolute;
+    top: 0.19rem;
+    left: 2.13rem;
+    width: 31.25rem;
+    height: 6.31rem;
+    object-fit: cover;
+  }
+  .chargeeazy-transparent-1-icon {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 9.56rem;
+    height: 6.38rem;
+    object-fit: cover;
+  }
+  .button-add-charger-child {
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: var(--br-4xl);
+    background-color: #fc6a00;
+    width: 19.69rem;
+    height: 4.69rem;
+    color: inherit;
+    text-decoration: none;
+    border-radius: 54px;
+  }
+  .share-your-charger {
+    position: absolute;
+    top: 0.94rem;
+    left: 0.44rem;
+    font-weight: 600;
+    display: inline-block;
+    width: 19.25rem;
+    height: 2.69rem;
+  }
+  .button-add-charger {
+    position: absolute;
+    top: 1rem;
+    left: 33rem;
+    width: 19.69rem;
+    height: 4.69rem;
+    text-align: left;
+    font-size: 1.88rem;
+    color: var(--color-white);
+    
+  }
+  .home {
+    position: absolute;
+    top: 0.19rem;
+    left: 65.44rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 8.25rem;
+    height: 6.19rem;
+    color: inherit;
+    text-decoration: none;
+  }
+  .service {
+    top: 0.31rem;
+    left: 75.56rem;
+    width: 8.69rem;
+    cursor: pointer;    
+  }
+  .contact,
+  .my-profile,
+  .service {
+    position: absolute;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 6.19rem;
+    color: inherit;
+    text-decoration: none;
+  }
+  .contact {
+    top: 0.19rem;
+    left: 87.06rem;
+    width: 8.25rem;
+    cursor: pointer;
+  }
+  .my-profile {
+    top: 0.31rem;
+    left: 97.44rem;
+    width: 11rem;
+  }
+  .nav-bar-item {
+    top: 1rem;
+    left: 112.25rem;
+    border-radius: 50%;
+    background-color: var(--color-seagreen);
+    width: 4.69rem;
+    height: 4.69rem;
+    cursor: pointer;
+  }
+  .m,
+  .nav-bar,
+  .nav-bar-item {
+    position: absolute;
+  }
+  .m {
+    top: 1.94rem;
+    left: 113.44rem;
+    color: var(--color-white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.25rem;
+    height: 2.56rem;
+    cursor: pointer;
+    text-decoration: none;
+  }
+  .nav-bar {
+    top: 0;
+    left: 0;
+    width: 120.06rem;
+    height: 6.5rem;
+    font-size: var(--font-size-13xl);
+    color: #098248;
+  } */

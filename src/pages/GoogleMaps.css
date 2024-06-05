@@ -1,0 +1,37 @@
+
+
+/* Marker info Window */
+
+.info-window-content {
+    background-color: #fc6a00;
+    padding: 10px;   
+    border-radius: 55px;
+    max-width: 300px;
+    text-align: left; 
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); 
+              
+}
+
+.port-type,
+.port-capacity {
+    font-weight: bold;
+    font-family: Arial;
+    font-size: 25px;
+    color: white; /* Change the color to your preference */
+    
+}
+
+ /* Recenter button styles */
+.recenter-button {
+    position: absolute; /* Position it over the map */
+    top: 80px; /* Adjust as needed */
+    right: 10px; /* Adjust as needed */
+    background-color: #fff;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    border-radius: 4px;
+    z-index: 10; /* Ensure it's above the map */
+}
+
