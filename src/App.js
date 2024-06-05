@@ -5,6 +5,7 @@ import {
   Route,
   useLocation,
 } from "react-router-dom";
+// import mainPage from "./pages/MainPage";
 import SignIn from "./pages/SignIn";
 import Services from "./pages/Services";
 import HomePage from "./pages/HomePage";
@@ -117,6 +118,8 @@ function App() {
   return (
     <LocationContext.Provider value={{ selectedLocation, setSelectedLocation }}>
       {/* No <Router> component here since it's already declared at a higher level in your app */}
+      
+     
       <Routes>
         <Route path="/" element={<SignIn />} />
         <Route path="/services" element={<Services />} />
@@ -133,14 +136,5 @@ function App() {
   )
   
 }
-
-// function App(){
-
-
-//   return(
-//     <NavBar></NavBar>
-    
-//   );
-// }
 
 export default App;
