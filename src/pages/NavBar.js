@@ -53,10 +53,10 @@ const NavBar = () => {
             
             <div className={`w-full md:flex md:w-auto ${isMenuOpen ? "block" : "hidden"}`}>
                 <div className="flex flex-col md:flex-row items-center space-y-4 md:space-y-0 md:space-x-10 mt-4 md:mt-0">
-                    <Link to="/homepage" className="text-white hover:text-green-400 transition duration-300">Home</Link>
-                    <Link to="/services" className="text-white hover:text-green-400 transition duration-300">Services</Link>
-                    <Link to="/contact" className="text-white hover:text-green-400 transition duration-300">Contact</Link>
-                    <Link to="/myprofile" className="text-white hover:text-green-400 transition duration-300">My Profile</Link>
+                    <Link to="/homepage" className="text-white hover:text-[#8AFF74] transition duration-300">Home</Link>
+                    <Link to="/services" className="text-white hover:text-[#8AFF74] transition duration-300">Services</Link>
+                    <Link to="/contact" className="text-white hover:text-[#8AFF74] transition duration-300">Contact</Link>
+                    <Link to="/myprofile" className="text-white hover:text-[#8AFF74] transition duration-300">My Profile</Link>
                 </div>
             </div>
         </nav>

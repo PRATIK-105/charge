@@ -1,31 +1,37 @@
-// FindCharger.js
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./FindCharger.css"; 
-import { db , auth } from '../config/firebase'; 
-import { collection, addDoc,  serverTimestamp } from 'firebase/firestore';
+import { db, auth } from '../config/firebase'; 
+import { collection, getDocs, addDoc, serverTimestamp } from 'firebase/firestore';
 
-const FindCharger = ({ chargerLocations, onClose }) => {
+const FindCharger = ({ chargerLocations = [], onClose }) => {
   console.log("Charger locations:", chargerLocations);
 
   const [selectedCharger, setSelectedCharger] = useState(null);
   const [requestSent, setRequestSent] = useState(false); 
+  const [chargers, setChargerLocations] = useState(chargerLocations); // Use local state to store charger locations
+
+  useEffect(() => {
+    fetchChargers();
+  }, []);
 
   const handleChargerClick = (charger) => {
     console.log("Charger clicked:", charger);
     setSelectedCharger(charger);
     setRequestSent(false);
-};
+  };
 
-const fetchChargers = async () => {
-  const snapshot = await db.collection('chargers').get();
-  const chargers = snapshot.docs.map(doc => ({
-    id: doc.id,  // Include the document ID
-    ...doc.data()
-  }));
-
-  // Assuming you're setting state or passing these chargers to the FindCharger component
-  setChargerLocations(chargers);  // Example of setting state
-}
+  const fetchChargers = async () => {
+    try {
+      const snapshot = await getDocs(collection(db, 'chargers'));
+      const chargers = snapshot.docs.map(doc => ({
+        id: doc.id,  // Include the document ID
+        ...doc.data()
+      }));
+      setChargerLocations(chargers);
+    } catch (error) {
+      console.error("Error fetching chargers: ", error);
+    }
+  };
 
   const closeSelectedCharger = () => {
     setSelectedCharger(null);
@@ -33,31 +39,31 @@ const fetchChargers = async () => {
 
   const sendChargeRequestEmail = async (charger) => {
     if (!auth.currentUser) {
-        console.log("User not authenticated");
-        return;
+      console.log("User not authenticated");
+      return;
     }
 
     try {
-        const response = await fetch('/sendChargeRequest', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({
-                chargerId: charger.id,
-                userId: auth.currentUser.uid
-            })
-        });
+      const response = await fetch('/sendChargeRequest', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          chargerId: charger.id,
+          userId: auth.currentUser.uid
+        })
+      });
 
-        if (response.ok) {
-            console.log("Email sent to service provider");
-        } else {
-            console.error("Failed to send email");
-        }
+      if (response.ok) {
+        console.log("Email sent to service provider");
+      } else {
+        console.error("Failed to send email");
+      }
     } catch (error) {
-        console.error("Error sending email:", error);
+      console.error("Error sending email:", error);
     }
-};
+  };
 
   const handleRequestCharge = async () => {
     console.log("Selected charger:", selectedCharger);
@@ -66,12 +72,12 @@ const fetchChargers = async () => {
       console.log("User not authenticated");
       return;
     }
-  
+
     if (!selectedCharger || selectedCharger.id === undefined) {
       console.log("No charger selected or charger ID is undefined");
       return;
     }
-   
+
     const chargeRequest = {
       chargerId: selectedCharger.id,
       userId: auth.currentUser.uid,
@@ -102,11 +108,11 @@ const fetchChargers = async () => {
 
   return (
     <div className="find-charger-modal">
-      {chargerLocations.map((charger, index) => (
-         <div key={index} className={`charger-box charger-${index + 1}`} onClick={() => {
+      {chargers.map((charger, index) => (
+        <div key={index} className={`charger-box charger-${index + 1}`} onClick={() => {
           console.log("Charger clicked:", charger);
           handleChargerClick(charger);
-      }}>
+        }}>
           <p className="charger-name-1">Charger Name: {charger.name}</p>
           <p className="port-type-1">Port Type: {charger.portType}</p>
           <p className="port-capacity-1">Port Capacity: {charger.portCapacity}</p>
@@ -135,5 +141,3 @@ const fetchChargers = async () => {
 };
 
 export default FindCharger;
-
-

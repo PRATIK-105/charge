@@ -9,7 +9,7 @@ import { db, auth } from '../config/firebase'; // Ensure these are correctly imp
 import { onAuthStateChanged } from "firebase/auth";
 import { useLocation } from 'react-router-dom';
 import "./HomePage.css";
-import "./NavBar.css";
+
 
 const HomePage = () => {
   const [isFindChargerOpen, setFindChargerOpen] = useState(false);

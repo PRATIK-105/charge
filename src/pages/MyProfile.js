@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import { doc, getDoc, collection, getDocs, query, where, deleteDoc } from "firebase/firestore";
 import { db, auth } from '../config/firebase';
 import "./MyProfile.css";
-import "./NavBar.css";
 import NavBar from "./NavBar";
 import { useNavigate } from 'react-router-dom';
 
